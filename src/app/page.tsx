@@ -9,7 +9,6 @@ import Experiences from '../components/Experiences'
 import ModalProject from '../components/ModalProject'
 import Educations from '../components/Educations'
 import Contact from '../components/Contact.jsx'
-import Footer from '../components/Footer.jsx'
 
 export default function Home() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -40,7 +39,6 @@ export default function Home() {
           <ModalProject isVisible={isModalVisible} onClose={closeModal} modalType={modalType} />
           <Educations />
           <Contact />
-          {/* <Footer /> */}
         </div>
       </div>
     </Fragment>

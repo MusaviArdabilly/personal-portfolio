@@ -36,7 +36,7 @@ const Projects = ({ openModal }) => {
               </div>
             </div>
             <p className='line-clamp-3 mulish text-xs md:text-base font-semibold mb-4'>
-              My portfolio website I've created using Next JS and Tailwind CSS. This Project showcasing a comprehensive display of my skills, projects, working experiences, and educational journey.
+              My portfolio website I&apos;ve created using Next JS and Tailwind CSS. This Project showcasing a comprehensive display of my skills, projects, working experiences, and educational journey.
             </p>
             <button className='text-xs md:text-base font-semibold py-1 px-2 border border-black rounded-md float-right hover:text-white hover:bg-black' onClick={() => openModal('portfolio')}>Detail</button>
           </div>
