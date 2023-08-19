@@ -159,7 +159,7 @@ const Projects = ({ openModal }) => {
               </div>
             </div>
             <p className='line-clamp-3 mulish text-xs md:text-base font-semibold mb-4'>
-              I&apos;ve been deeply involved in transforming intricate Figma designs into functional web interfaces using a combination of HTML, CSS, and JavaScript, with the added efficiency of Bootstrap framework. Collaborating within a skilled team, I tackled this project as a freelance endeavor. My responsibilities encompassed the precise translation of design elements into responsive and interactive web components, ensuring a seamless user experience across various devices. This project underscores my ability to effectively collaborate in a team environment while delivering high-quality outcomes that align with the client's vision and project goals.
+              I&apos;ve been deeply involved in transforming intricate Figma designs into functional web interfaces using a combination of HTML, CSS, and JavaScript, with the added efficiency of Bootstrap framework. Collaborating within a skilled team, I tackled this project as a freelance endeavor. My responsibilities encompassed the precise translation of design elements into responsive and interactive web components, ensuring a seamless user experience across various devices. This project underscores my ability to effectively collaborate in a team environment while delivering high-quality outcomes that align with the client&apos;s vision and project goals.
             </p>
             <button className='text-xs md:text-base font-semibold py-1 px-2 border border-black rounded-md float-right hover:text-white hover:bg-black' onClick={() => openModal('trueve')}>Detail</button>
           </div>

@@ -16,7 +16,7 @@ export default function Home() {
 
   console.log(modalType);
 
-  const openModal = (type) => {
+  const openModal = (type:string) => {
     setIsModalVisible(true);
     setModalType(type);
   };

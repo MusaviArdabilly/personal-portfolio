@@ -34,7 +34,7 @@ const Portfolio = ({ isVisible }) => {
         </div>
       </div>
       <p className='mulish text-xs md:text-base font-semibold mb-4'>
-        My portfolio website I've created using Next JS and Tailwind CSS. This Project showcasing a comprehensive display of my skills, projects, working experiences, and educational journey.
+        My portfolio website I&apos;ve created using Next JS and Tailwind CSS. This Project showcasing a comprehensive display of my skills, projects, working experiences, and educational journey.
       </p>
     </div>
   )
