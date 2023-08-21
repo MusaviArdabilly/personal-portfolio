@@ -29,13 +29,13 @@ const Contact = () => {
                 <div className='flex items-center justify-center'>
                   <Image 
                     src="/image/social-media/gmail.png"
-                    alt="Whatsapp"
+                    alt="Gmail"
                     width={60} height={60}
                   />
                 </div>
                 <div className='col-span-3'>
-                  <h1 className='text-sm md:text-base font-bold'>Instagram</h1>
-                  <h2 className='text-xs md:text-xs text-gray-500 mb-2'>@msvbill</h2>
+                  <h1 className='text-sm md:text-base font-bold'>Gmail</h1>
+                  <h2 className='text-xs md:text-xs text-gray-500 mb-2'>201musavi@gmail.com</h2>
                   <h3 className='text-xs md:text-sm font-bold text-gray-700'>Send Message</h3>
                 </div>
               </div>
