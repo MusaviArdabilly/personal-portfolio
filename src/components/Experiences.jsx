@@ -80,37 +80,11 @@ const Experiences = () => {
                 <h1 className='text-md md:text-xl font-bold'>Back End Web Developer</h1>
                 <h2 className='text-xs md:text-sm text-right'>Malang, Indonesia</h2>
               </div>
-              <h2 className='text-xs md:text-sm text-gray-600 mb-4'>PT. MyECO Teknologi Nusantara | Freelance</h2>
-              <ul className='list-disc mulish text-xs md:text-sm font-semibold pl-5 mb-4'>
-                <li>Created open API documentation</li>
-              </ul>
-              <div className='flex flex-wrap gap-2 mb-4'>
-                <div className='flex justify-evenly items-center gap-2 p-1 shadow shadow-gray-400 rounded'>
-                  <Image 
-                    src="/image/tech/swagger.png"
-                    alt='NextJS' 
-                    width={16} height={16}
-                  />
-                  <h2 className='text-xs font-semibold inline'>Swagger</h2>
-                </div>
-              </div>
-              <div className='flex justify-end items-center text-xs text-gray-400'>
-                <FontAwesomeIcon icon={faCalendar} />
-                <h3 className='inline ml-2'>January 2023 - February 2023</h3>
-              </div>
-            </div>
-            <div className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
-              <div className='absolute top-1/2 transform-translate-y-1/2 -mx-10'>
-                <div className="w-3 h-3 bg-black rounded-full"></div>
-              </div>
-              <div className='flex justify-between items-center'>
-                <h1 className='text-md md:text-xl font-bold'>Back End Web Developer</h1>
-                <h2 className='text-xs md:text-sm text-right'>Malang, Indonesia</h2>
-              </div>
               <h2 className='text-xs md:text-sm text-gray-600 mb-4'>PT. MyECO Teknologi Nusantara | Internship</h2>
               <ul className='list-disc mulish text-xs md:text-sm font-semibold pl-5 mb-4'>
                 <li>Created auth service</li>
                 <li>Created user level</li>
+                <li>Created open API documentation</li>
               </ul>
               <div className='flex flex-wrap gap-2 mb-4'>
                 <div className='flex justify-evenly items-center gap-2 p-1 shadow shadow-gray-400 rounded'>
@@ -129,11 +103,19 @@ const Experiences = () => {
                   />
                   <h2 className='text-xs font-semibold inline'>MongoDB</h2>
                 </div>
+                <div className='flex justify-evenly items-center gap-2 p-1 shadow shadow-gray-400 rounded'>
+                  <Image 
+                    src="/image/tech/swagger.png"
+                    alt='NextJS' 
+                    width={16} height={16}
+                  />
+                  <h2 className='text-xs font-semibold inline'>Swagger</h2>
+                </div>
               </div>
               <div className='flex justify-end items-center text-xs text-gray-400'>
                 <FontAwesomeIcon icon={faCalendar} />
                 <h3 className='inline ml-2'>
-                  October 2022 - December 2022
+                  October 2022 - February 2023
                 </h3>
               </div>
             </div>
