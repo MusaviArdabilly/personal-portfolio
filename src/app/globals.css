@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  font-family: 'Poppins', sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
-html {
-  
-  scroll-behavior: smooth;
+body{
+  font-family: 'Poppins', sans-serif;
 }
 
 div {
@@ -83,9 +82,4 @@ div {
   background-attachment: cover;
   background-position: center;
   background-size: cover;
-}
-
-.blob{
-  width: 500px;
-  height: 500px;
 }
