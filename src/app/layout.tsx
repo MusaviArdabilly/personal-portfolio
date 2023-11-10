@@ -1,10 +1,5 @@
 import './globals.css'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Musavi Ardabilly',
-  description: 'Personal Portfolio',
-}
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 export default function RootLayout({
   children,

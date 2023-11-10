@@ -1,31 +1,19 @@
-'use client'
-import { Fragment, useState } from 'react'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Skills from '../components/Skills'
-import Projects from '../components/Projects'
-import Experiences from '../components/Experiences'
-import ModalProject from '../components/ModalProject'
-import Educations from '../components/Educations'
-import Contact from '../components/Contact.jsx'
+import { Fragment } from 'react'
+import Navbar from '../components/home/Navbar'
+import Hero from '../components/home/Hero'
+import About from '../components/home/About'
+import Skills from '../components/home/Skills'
+import Projects from '../components/home/Projects'
+import Experiences from '../components/home/Experiences'
+import Educations from '../components/home/Educations'
+import Contact from '../components/home/Contact.jsx'
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Musavi Ardabilly',
+}
 
 export default function Home() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalType, setModalType] = useState('');
-
-  console.log(modalType);
-
-  const openModal = (type:string) => {
-    setIsModalVisible(true);
-    setModalType(type);
-  };
-
-  const closeModal = () => {
-    setIsModalVisible(false);
-    setModalType('');
-  };
-
   return (
     <Fragment>
       <div className='relative'>
@@ -35,8 +23,7 @@ export default function Home() {
           <About />
           <Experiences />
           <Skills />
-          <Projects openModal={openModal}/>
-          <ModalProject isVisible={isModalVisible} onClose={closeModal} modalType={modalType} />
+          <Projects/>
           <Educations />
           <Contact />
         </div>

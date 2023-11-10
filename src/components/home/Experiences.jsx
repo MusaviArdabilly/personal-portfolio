@@ -68,7 +68,7 @@ const Experiences = () => {
                 </div>
               </div>
               <div className='flex justify-end items-center text-xs text-gray-400'>
-                <FontAwesomeIcon icon={faCalendar} className=''/>
+                <FontAwesomeIcon icon={faCalendar}/>
                 <h3 className='inline ml-2'>March 2023 - July 2023</h3>
               </div>
             </div>
