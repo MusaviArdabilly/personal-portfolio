@@ -6,6 +6,15 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  
+  scroll-behavior: smooth;
+}
+
+div {
+  scroll-snap-stop: always;
+}
+
 .poppins{
   font-family: 'Poppins', sans-serif;
 }
