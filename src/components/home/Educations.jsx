@@ -1,15 +1,37 @@
+'use client'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const Educations = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true
+  })
   return (
     <section className='min-h-screen pt-20 flex items-center' id='educations'>
       <div className='container mx-auto p-5'>
-        <h1 className='text-center font-bold text-4xl mb-10'>Educations</h1>
+        <motion.h1
+          ref={ref}
+          initial={{ opacity: 0, y: -50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            type: 'spring',
+            stiffness: 120,
+            damping: 10,
+            duration: 1,
+            delay: 0
+          }} 
+          className='text-center font-bold text-4xl mb-10'>Educations</motion.h1>
         <div className='flex justify-center'>
           <div className='grid gap-5 sm:w-screen md:w-3/6 border-l-2 border-black pl-4'>
-            <div className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
+            <motion.div 
+              ref={ref}
+              initial={{ y: '100%' }}
+              animate={inView ? { y: 0 } : {}}
+              transition={{ delay: 0}}
+              className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
               <div className='absolute top-1/2 transform-translate-y-1/2 -mx-10'>
                 <div className="w-3 h-3 bg-black rounded-full"></div>
               </div>
@@ -25,8 +47,13 @@ const Educations = () => {
                 <FontAwesomeIcon icon={faCalendar} className=''/>
                 <h3 className='inline ml-2'>August 2021 - July 2023 </h3>
               </div>
-            </div>
-            <div className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
+            </motion.div>
+            <motion.div 
+              ref={ref}
+              initial={{ y: '100%' }}
+              animate={inView ? { y: 0 } : {}}
+              transition={{ delay: 0.4}}
+              className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
               <div className='absolute top-1/2 transform-translate-y-1/2 -mx-10'>
                 <div className="w-3 h-3 bg-black rounded-full"></div>
               </div>
@@ -42,7 +69,7 @@ const Educations = () => {
                 <FontAwesomeIcon icon={faCalendar} className=''/>
                 <h3 className='inline ml-2'>August 2018 - July 2021</h3>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

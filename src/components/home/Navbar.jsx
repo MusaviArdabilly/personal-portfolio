@@ -1,7 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const [scrollShadow, setScrollShadow] = useState(false);
@@ -33,27 +34,55 @@ const Navbar = () => {
           <embed src="/icon/mlogo.svg" type="" className='w-6 h-6' />
         </div> */}
         <ul className='flex space-x-6 font-bold'>
-          <li className='flex items-center hover:border-b-4'>
+          <motion.li 
+            initial={{ y: '-100%', scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className='flex items-center hover:border-b-4'>
             <a href="#home" className=''>Home</a>
-          </li>
-          <li className='flex items-center hover:border-b-4'>
+          </motion.li>
+          <motion.li
+            initial={{ y: '-100%', scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0.4 }}
+            className='flex items-center hover:border-b-4'>
             <a href="#about" className=''>About</a>
-          </li>
-          <li className='flex items-center hover:border-b-4'>
+          </motion.li>
+          <motion.li
+            initial={{ y: '-100%', scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0.6 }} 
+            className='flex items-center hover:border-b-4'>
             <a href="#experiences" className=''>Experiences</a>
-          </li>
-          <li className='flex items-center hover:border-b-4'>
+          </motion.li>
+          <motion.li
+            initial={{ y: '100%', scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0 }}                                       
+            className='flex items-center hover:border-b-4'>
             <a href="#skills" className=''>Skills</a>
-          </li>
-          <li className='flex items-center hover:border-b-4'>
+          </motion.li>
+          <motion.li
+            initial={{ y: '-100%', scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0.7 }} 
+            className='flex items-center hover:border-b-4'>
             <a href="#projects" className=''>Projects</a>
-          </li>
-          <li className='flex items-center hover:border-b-4'>
+          </motion.li>
+          <motion.li
+            initial={{ y: '-100%', scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0.5 }} 
+            className='flex items-center hover:border-b-4'>
             <a href="#educations" className=''>Educations</a>
-          </li>
-          <li className='flex items-center hover:border-b-4'>
+          </motion.li>
+          <motion.li
+            initial={{ y: '-100%', scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0.3 }} 
+            className='flex items-center hover:border-b-4'>
             <a href="#contact" className=''>Contact</a>
-          </li>
+          </motion.li>
         </ul>
         {/* <div className='flex items-center justify-center rounded-full bg-neutral-100 w-10 h-10 transition duration-500 hover:rotate-[-17deg] hover:scale-125'>
           <FontAwesomeIcon icon={ faMoon } height={16} width={16}/>

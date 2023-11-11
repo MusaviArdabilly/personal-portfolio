@@ -2,6 +2,8 @@
 import {React, useState} from 'react'
 import Image from 'next/image'
 import ModalProject from './ModalProject'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const Projects = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -18,13 +20,35 @@ const Projects = () => {
     setIsModalVisible(false);
     setModalType('');
   };
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '50% 0px'
+  });
+
   return (
     <>
       <div className='min-h-screen pt-20 flex items-center' id='projects'>
         <div className='container md:mx-auto p-5'>
-          <h1 className='text-center font-bold text-4xl mb-10'>Projects</h1>
+          <motion.h1
+          ref={ref}
+          initial={{ opacity: 0, y: -50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            type: 'spring',
+            stiffness: 120,
+            damping: 10,
+            duration: 1,
+            delay: 0
+          }} 
+          className='text-center font-bold text-4xl mb-10'>Projects</motion.h1>
           <div className='flex items-center grid grid-col md:grid-cols-2 gap-8'>
-            <div className='shadow-lg shadow-gray-300 rounded p-5'>
+            <motion.div 
+              ref={ref}
+              initial={{ x: '-100%' }}
+              animate={inView ? { x: 0 } : {}}
+              transition={{ delay: 0, duration: 0.8 }}
+              className='shadow-lg shadow-gray-300 rounded p-5'>
               <Image 
                 src="/image/project/portfolio.png"
                 alt='Proj' 
@@ -56,8 +80,13 @@ const Projects = () => {
                 My portfolio website I&apos;ve created using Next JS and Tailwind CSS. This Project showcasing a comprehensive display of my skills, projects, working experiences, and educational journey.
               </p>
               <button className='text-xs md:text-base font-semibold py-1 px-2 border border-black rounded-md float-right hover:text-white hover:bg-black' onClick={() => openModal('portfolio')}>Detail</button>
-            </div>
-            <div className='shadow-lg shadow-gray-300 rounded p-5'>
+            </motion.div>
+            <motion.div 
+              ref={ref}
+              initial={{ x: '100%' }}
+              animate={inView ? { x: 0 } : {}}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className='shadow-lg shadow-gray-300 rounded p-5'>
               <Image 
                 src="/image/project/transtalia.png"
                 alt='Proj' 
@@ -113,8 +142,13 @@ const Projects = () => {
                 I&apos;ve successfully developed an Enterprise Resource Planning (ERP) system tailored for Trans Talia, a prominent company specializing in bus travel rentals. This comprehensive solution not only streamlines their business operations but also enhances their customer experience. Within the ERP, I have seamlessly integrated a reservation system that empowers their clients to conveniently book their travel arrangements. This project stands as a testament to my ability to deliver impactful software solutions that cater to the specific needs of businesses, fostering efficiency and customer satisfaction.
               </p>
               <button className='text-xs md:text-base font-semibold py-1 px-2 border border-black rounded-md float-right hover:text-white hover:bg-black' onClick={() => openModal('transtalia')}>Detail</button>
-            </div>
-            <div className='shadow-lg shadow-gray-300 rounded p-5'>
+            </motion.div>
+            <motion.div 
+              ref={ref}
+              initial={{ x: '-100%' }}
+              animate={inView ? { x: 0 } : {}}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className='shadow-lg shadow-gray-300 rounded p-5'>
               <Image 
                 src="/image/project/rentalku.png"
                 alt='Proj' 
@@ -154,8 +188,13 @@ const Projects = () => {
               In this project, I&apos;ve designed and developed a dynamic website catering to rental agents in the automotive industry. This platform empowers rental agents to effectively showcase their available vehicles for rent, acting as a promotional hub to attract potential customers. With user-friendliness in mind, I&apos;ve incorporated a seamless search feature that allows users to effortlessly locate rental options based on their desired location. Through this project, I&apos;ve demonstrated my proficiency in creating user-centric digital solutions that bridge the gap between rental agents and customers, facilitating a streamlined and convenient experience for both parties.
               </p>
               <button className='text-xs md:text-base font-semibold py-1 px-2 border border-black rounded-md float-right hover:text-white hover:bg-black' onClick={() => openModal('rentalku')}>Detail</button>
-            </div>
-            <div className='shadow-lg shadow-gray-300 rounded p-5'>
+            </motion.div>
+            <motion.div 
+              ref={ref}
+              initial={{ x: '100%' }}
+              animate={inView ? { x: 0 } : {}}
+              transition={{ delay: 0, duration: 0.8 }}
+              className='shadow-lg shadow-gray-300 rounded p-5'>
               <Image 
                 src="/image/project/trueve.png"
                 alt='Proj' 
@@ -179,7 +218,7 @@ const Projects = () => {
                 I&apos;ve been deeply involved in transforming intricate Figma designs into functional web interfaces using a combination of HTML, CSS, and JavaScript, with the added efficiency of Bootstrap framework. Collaborating within a skilled team, I tackled this project as a freelance endeavor. My responsibilities encompassed the precise translation of design elements into responsive and interactive web components, ensuring a seamless user experience across various devices. This project underscores my ability to effectively collaborate in a team environment while delivering high-quality outcomes that align with the client&apos;s vision and project goals.
               </p>
               <button className='text-xs md:text-base font-semibold py-1 px-2 border border-black rounded-md float-right hover:text-white hover:bg-black' onClick={() => openModal('trueve')}>Detail</button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

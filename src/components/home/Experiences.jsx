@@ -1,16 +1,44 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 
 const Experiences = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    // rootMargin: '50% 0px'
+  });
   return (
     <section className='min-h-screen pt-20 flex items-center' id='experiences'>
       <div className='container mx-auto p-5'>
-        <h1 className='text-center font-bold text-4xl mb-10'>Experiences</h1>
+        <motion.h1
+          ref={ref}
+          initial={{ opacity: 0, y: -50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            type: 'spring',
+            stiffness: 120,
+            damping: 10,
+            duration: 1,
+            delay: 0
+          }} 
+          className='text-center font-bold text-4xl mb-10'>Experiences</motion.h1>
         <div className='flex justify-center'>
-          <div className='grid gap-5 sm:w-screen md:w-3/6 border-l-2 border-black pl-4'>
-            <div className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
+          <motion.div 
+            ref={ref}
+            initial={{  x: '-100%', scale: 1 }}
+            animate={inView ? { x: 0, scale: 1 } : {}}
+            transition={{  duration: 1 }}
+            className='grid gap-5 sm:w-screen md:w-3/6 border-l-2 border-black pl-4'>
+            <motion.div
+              ref={ref}
+              initial={{x: '200%', opacity: 0 }}
+              animate={inView ? { x: 0, opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0 }}
+              className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
               <div className='absolute top-1/2 transform-translate-y-1/2 -mx-10'>
                 <div className="w-3 h-3 bg-black rounded-full"></div>
               </div>
@@ -71,8 +99,13 @@ const Experiences = () => {
                 <FontAwesomeIcon icon={faCalendar}/>
                 <h3 className='inline ml-2'>March 2023 - July 2023</h3>
               </div>
-            </div>
-            <div className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              initial={{x: '100%', opacity: 0 }}
+              animate={inView ? { x: 0, opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0.25 }}
+              className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
               <div className='absolute top-1/2 transform-translate-y-1/2 -mx-10'>
                 <div className="w-3 h-3 bg-black rounded-full"></div>
               </div>
@@ -118,8 +151,13 @@ const Experiences = () => {
                   October 2022 - February 2023
                 </h3>
               </div>
-            </div>
-            <div className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              initial={{x: '100%', opacity: 0 }}
+              animate={inView ? { x: 0, opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0.5 }}
+              className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
               <div className='absolute top-1/2 transform-translate-y-1/2 -mx-10'>
                 <div className="w-3 h-3 bg-black rounded-full"></div>
               </div>
@@ -147,8 +185,13 @@ const Experiences = () => {
                   April 2022 - May 2022
                 </h3>
               </div>
-            </div>
-            <div className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              initial={{x: '100%', opacity: 0 }}
+              animate={inView ? { x: 0, opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0.75 }}
+              className='p-4 relative rounded shadow-lg shadow-gray-300 hover:shadow'>
               <div className='absolute top-1/2 transform-translate-y-1/2 -mx-10'>
                 <div className="w-3 h-3 bg-black rounded-full"></div>
               </div>
@@ -193,8 +236,8 @@ const Experiences = () => {
                   June 2021 - March 2022
                 </h3>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
